@@ -2,6 +2,7 @@ package com.example.news;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import java.util.List;
@@ -29,8 +30,15 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         nTextView = findViewById(R.id.newsTextView);
         nButton = findViewById(R.id.moreButton);
-        Random aleatorio = new Random();
-        String mensaje = mensajes.get(4);
-        nTextView.setText(mensaje);
+
+        nButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Random aleatorio = new Random();
+                // String mensaje = mensajes.get(4);
+                String mensaje = mensajes.get(aleatorio.nextInt(mensajes.size()));
+                nTextView.setText(mensaje);
+            }
+        });
     }
 }
