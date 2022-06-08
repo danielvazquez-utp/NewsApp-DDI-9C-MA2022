@@ -30,7 +30,10 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         nTextView = findViewById(R.id.newsTextView);
         nButton = findViewById(R.id.moreButton);
-
+        /**
+        String mensaje = mensajes.get(4);
+        nTextView.setText(mensaje);
+         */
         nButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
